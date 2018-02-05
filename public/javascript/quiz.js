@@ -5,11 +5,13 @@ $('form').submit(function(e){
     $('input[type=text]').each(function() {
       if ($(this).val() === "") {
         is_valid = false;
+        $(this).prev().css('color', 'red');
       }
     });
-    $('input[type=select]').each(function() {
-      if ($(this).val() === "") {
+    $('select option:selected').each(function() {
+      if ($(this).text() === "-") {
         is_valid = false;
+       $(this).parent().css('background-color', 'red');
       }
     });
     //end form validation
@@ -32,12 +34,15 @@ $('form').submit(function(e){
       };
     
   $('input[type=submit]').attr('value', 'Loading...').attr('disabled', 'disabled');
-
+  if(is_valid){
   $.post("/api/friends", form_data, function(data, err) {
         if(err) console.log('error')
         return;
         //evaluate and display match here
      });
+   } else {
+     alert('Oops! Please make sure you enter a valid name and image URL.')
+   }
 });
 
   

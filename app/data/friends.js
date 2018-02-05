@@ -1,3 +1,4 @@
+//enter dummy entries
 let friends_db = [
     {
       test: 1
