@@ -84,6 +84,17 @@ position:fixed;
 top:0;
 width: 100%;
 }
+#photo-creds{
+opacity: .3;
+position:absolute;
+top:0;
+left:90%;
+right:0;
+width: 50%;
+}
+#photo-creds:hover{
+opacity: .6;
+}
 icon{
   opacity: .5;
   margin-left: .5%;
