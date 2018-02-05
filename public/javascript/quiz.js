@@ -6,13 +6,19 @@ $('form').submit(function(e){
       if ($(this).val() === "") {
         is_valid = false;
         $(this).prev().css('color', 'red');
+      } else {
+        is_valid = true;
+        $(this).prev().css('color', 'white');
       }
     });
     $('select option:selected').each(function() {
       if ($(this).text() === "-") {
         is_valid = false;
        $(this).parent().css('border-color', 'red');
-      }
+     } else {
+       is_valid = true;
+        $(this).parent().css('border-color', 'black');
+     }
     });
     //end form validation
     
