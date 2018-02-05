@@ -11,7 +11,7 @@ $('form').submit(function(e){
     $('select option:selected').each(function() {
       if ($(this).text() === "-") {
         is_valid = false;
-       $(this).parent().css('background-color', 'red');
+       $(this).parent().css('border-color', 'red');
       }
     });
     //end form validation
