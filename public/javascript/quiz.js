@@ -33,8 +33,8 @@ $('form').submit(function(e){
         ]
       };
     
-  $('input[type=submit]').attr('value', 'Loading...').attr('disabled', 'disabled');
   if(is_valid){
+  $('input[type=submit]').attr('value', 'Loading...').attr('disabled', 'disabled');
   $.post("/api/friends", form_data, function(data, err) {
         if(err) console.log('error')
         return;
