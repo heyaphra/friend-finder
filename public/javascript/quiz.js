@@ -41,7 +41,7 @@ $('form').submit(function(e){
         //evaluate and display match here
      });
    } else {
-     alert('Oops! Please make sure you enter a valid name and image URL.')
+     alert('Oops! Please make sure you answer all the questions and enter a valid name and image URL.')
    }
 });
 
