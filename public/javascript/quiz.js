@@ -39,16 +39,22 @@ $('form').submit(function(e){
           $("#question10").val()
         ]
       };
-    
+      
+  
   if(is_text_valid && is_select_valid){
-  // $('input[type=submit]').attr('value', 'Loading...').attr('disabled', 'disabled');
+  $('input[type=submit]').attr('value', 'Loading...').attr('disabled', 'disabled');
   $.post("/api/friends", form_data, function(data, err) {
-        if(err) console.log('error')
-        //evaluate and display match here
+        alert(data.name);
+        $('form').html(`
+          <h3>It's a match!</h3>
+          <p id='match-msg'>You matched with ${data.name}!</p>
+          <img src='${data.photo}' class='match-img'/>
+        `);
+        
      });
      
    } else {
-     //change to message next to button for better UX
+   //   //change to message next to button for better UX
      alert('Oops! Please make sure you answer all the questions and enter a valid name and image URL.')
    }
 });

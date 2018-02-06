@@ -55,7 +55,6 @@ for(let n = 0; n < comparisons.length; n++){
 
 // console.log(match);
 res.json(match);
-res.send('/', match);
 });
 
 

@@ -47,6 +47,17 @@ height: 400px;
 font-size: 14px;
 overflow: scroll;
 }
+#match-msg{
+  /* margin-top: %; */
+  text-align: center;
+}
+.match-img{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
 #quiz-summary{
   font-size: 12px;
   padding: 0 8% 0 8%;
