@@ -5,7 +5,7 @@ $('.expand').on('click', function() {
   console.log(elements);
   if ($(this).text() === '+') {
     $(this).text('-');
-    $('#extra').hide(1500);
+  
     $('#' + identifier).closest('div').find(elements).show(1500); //Finds the nested element and shows it
   } else if ($(this).text() === '-') {
     $(this).text('+');
