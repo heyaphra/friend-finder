@@ -44,7 +44,6 @@ $('form').submit(function(e){
   if(is_text_valid && is_select_valid){
   $('input[type=submit]').attr('value', 'Loading...').attr('disabled', 'disabled');
   $.post("/api/friends", form_data, function(data, err) {
-        alert(data.name);
         $('form').html(`
           <h3>It's a match!</h3>
           <p id='match-msg'>You matched with ${data.name}!</p>
@@ -54,7 +53,7 @@ $('form').submit(function(e){
      });
      
    } else {
-   //   //change to message next to button for better UX
+   //  
      alert('Oops! Please make sure you answer all the questions and enter a valid name and image URL.')
    }
 });

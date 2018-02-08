@@ -5,10 +5,9 @@ $('.expand').on('click', function() {
   console.log(elements);
   if ($(this).text() === '+') {
     $(this).text('-');
-  
-    $('#' + identifier).closest('div').find(elements).show(1500); //Finds the nested element and shows it
+    $('#' + identifier).find(elements).show(1500); //Finds the nested element and shows it
   } else if ($(this).text() === '-') {
     $(this).text('+');
-    $('#' + identifier).closest('div').find(elements).hide(1500); //Finds the nested element and hides it
+    $('#' + identifier).find(elements).hide(1500); //Finds the nested element and hides it
   }
 });

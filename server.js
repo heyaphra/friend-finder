@@ -5,13 +5,13 @@ const http = require('http')
 const bodyParser = require("body-parser");
 const friends = require('./app/data/friends.js').friends_db;
 
-app.use(express.static('public'));
+app.use(express.static('public')); //use public to serve static stylesheets 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const PORT = process.env.PORT || 8080;
 
-// viewed at http://localhost:8080
+//home page viewed at http://localhost:8080
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/home.html'));
 });
@@ -24,7 +24,6 @@ app.get("/api/friends", function(req, res) {
 app.post('/api/friends',function(req,res){
   friends.push(req.body);
 
-  let diff = 0;
   let comparisons = [];
   let match;
   
@@ -44,7 +43,7 @@ app.post('/api/friends',function(req,res){
 let biggest_score = 0;
 //iterate through comparisions and find the best match
 for(let n = 0; n < comparisons.length; n++){
-  if(comparisons[n].score > biggest_score){
+  if(comparisons[n].score > biggest_score){ //iterates through all comparisions and returns the highest score
       biggest_score = comparisons[n].score;
       match = {
         name: comparisons[n].name,
@@ -53,7 +52,6 @@ for(let n = 0; n < comparisons.length; n++){
   }
 }
 
-// console.log(match);
 res.json(match);
 });
 
